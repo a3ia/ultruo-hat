@@ -9,13 +9,13 @@ fi
 
 set -e
 
-echo "INSTALLING TAS5825M INITIALIZATION SCRIPT..."
+echo "INSTALLING tas5828M INITIALIZATION SCRIPT..."
 
 apt update
 apt -y install i2c-tools python-smbus
 
-# tas5825m init script
-cat <<'EOF' > /usr/bin/tas5825m_init.py
+# tas5828m init script
+cat <<'EOF' > /usr/bin/tas5828m_init.py
 #!/usr/bin/env python
 
 from smbus import SMBus
@@ -1719,16 +1719,16 @@ bus.write_byte_data(0x4c, 0x78, 0x80) # Clear analog fault
 
 EOF
 
-chmod a+x /usr/bin/tas5825m_init.py
+chmod a+x /usr/bin/tas5828m_init.py
 
-# tas5825m init service
-cat <<'EOF' > /etc/systemd/system/tas5825m.service
+# tas5828m init service
+cat <<'EOF' > /etc/systemd/system/tas5828m.service
 [Unit]
-Description=tas5825m Initialization
+Description=tas5828m Initialization
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python /usr/bin/tas5825m_init.py
+ExecStart=/usr/bin/python /usr/bin/tas5828m_init.py
 
 [Install]
 WantedBy=multi-user.target
@@ -1737,9 +1737,9 @@ EOF
 
 
 systemctl daemon-reload
-systemctl enable tas5825m.service
-systemctl start tas5825m.service
+systemctl enable tas5828m.service
+systemctl start tas5828m.service
 
-echo "INSTALL TAS5825M INITIALIZATION SCRIPT DONE!"
+echo "INSTALL tas5828M INITIALIZATION SCRIPT DONE!"
 echo "SELECT 'Generic I2S DAC' IN VOLUMIO PLAYBACK SETTINGS AND ENABLE SOFTWARE MIXER FOR VOLUME CONTROL"
 echo "PLEASE REBOOT."
