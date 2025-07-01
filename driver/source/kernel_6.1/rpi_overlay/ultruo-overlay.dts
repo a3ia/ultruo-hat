@@ -1,4 +1,4 @@
-// Definitions for BassOwl-HAT
+// Definitions for ULTRUO-HAT
 /dts-v1/;
 /plugin/;
 
@@ -20,10 +20,10 @@
             #address-cells = <1>;
             #size-cells = <0>;
 
-            codec: tas5825m@4c {
+            codec: tas5828m@61 {
                 #sound-dai-cells = <0>;
-                compatible = "ti,tas5825m";
-                reg = <0x4c>;
+                compatible = "ti,tas5828m";
+                reg = <0x61>;
             };
         };
     };
@@ -33,7 +33,7 @@
         __overlay__ {
             status = "okay";
             compatible = "simple-audio-card";
-            label = "bassowl";
+            label = "ultruo";
             simple-audio-card,dai-link {
                 /* DAC */
                 format = "i2s";
