@@ -9,7 +9,7 @@ fi
 
 set -e
 
-echo "INSTALLING ALSA SETTINGS FOR TAS5825M AND TAS5825M INITIALIZATION SCRIPT..."
+echo "INSTALLING ALSA SETTINGS FOR tas5828M AND tas5828M INITIALIZATION SCRIPT..."
 
 sed -i \
   -e "s/^dtparam=audio=on/#\0/" \
@@ -69,8 +69,8 @@ rm -f /home/pi/.asoundrc
 rm -f /root/.asoundrc
 
 
-# TAS5825M init script
-cat <<'EOF' > /usr/bin/tas5825m_init.py
+# tas5828M init script
+cat <<'EOF' > /usr/bin/tas5828m_init.py
 #!/usr/bin/env python
 
 from smbus import SMBus
@@ -1774,16 +1774,16 @@ bus.write_byte_data(0x4c, 0x78, 0x80) # Clear analog fault
 
 EOF
 
-chmod a+x /usr/bin/tas5825m_init.py
+chmod a+x /usr/bin/tas5828m_init.py
 
-# TAS5825M init service
-cat <<'EOF' > /etc/systemd/system/tas5825m.service
+# tas5828M init service
+cat <<'EOF' > /etc/systemd/system/tas5828m.service
 [Unit]
-Description=tas5825m Initialization
+Description=tas5828m Initialization
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python /usr/bin/tas5825m_init.py
+ExecStart=/usr/bin/python /usr/bin/tas5828m_init.py
 
 [Install]
 WantedBy=multi-user.target
@@ -1792,8 +1792,8 @@ EOF
 
 
 systemctl daemon-reload
-systemctl enable tas5825m.service
-systemctl start tas5825m.service
+systemctl enable tas5828m.service
+systemctl start tas5828m.service
 
-echo "INSTALL ALSA SETTINGS FOR TAS5825M AND TAS5825M INITIALIZATION SCRIPT DONE!"
+echo "INSTALL ALSA SETTINGS FOR tas5828M AND tas5828M INITIALIZATION SCRIPT DONE!"
 echo "PLEASE REBOOT."
