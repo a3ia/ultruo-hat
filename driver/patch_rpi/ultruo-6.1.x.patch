@@ -38,10 +38,10 @@ index 000000000..74049b973
 +            #address-cells = <1>;
 +            #size-cells = <0>;
 +
-+            codec: tas5828m@4c {
++            codec: tas5828m@61 {
 +                #sound-dai-cells = <0>;
 +                compatible = "ti,tas5828m";
-+                reg = <0x4c>;
++                reg = <0x61>;
 +            };
 +        };
 +    };
