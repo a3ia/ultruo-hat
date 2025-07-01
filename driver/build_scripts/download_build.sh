@@ -172,11 +172,11 @@ mkdir -p modules-rpi-${KERNEL_VERSION}-ultruo/lib/modules/${KERNEL_VERSION}-v7l+
 mkdir -p modules-rpi-${KERNEL_VERSION}-ultruo/lib/modules/${KERNEL_VERSION}-v8+/kernel/sound/soc/codecs/
 mkdir -p modules-rpi-${KERNEL_VERSION}-ultruo/lib/modules/${KERNEL_VERSION}-v8-16k+/kernel/sound/soc/codecs/
 cp linux-${KERNEL_VERSION}+/arch/arm/boot/dts/overlays/ultruo.dtbo modules-rpi-${KERNEL_VERSION}-ultruo/boot/overlays
-cp linux-${KERNEL_VERSION}+/sound/soc/codecs/snd-soc-tas5825m.ko modules-rpi-${KERNEL_VERSION}-ultruo//lib/modules/${KERNEL_VERSION}+/kernel/sound/soc/codecs/
-cp linux-${KERNEL_VERSION}-v7+/sound/soc/codecs/snd-soc-tas5825m.ko modules-rpi-${KERNEL_VERSION}-ultruo/lib/modules/${KERNEL_VERSION}-v7+/kernel/sound/soc/codecs/
-cp linux-${KERNEL_VERSION}-v7l+/sound/soc/codecs/snd-soc-tas5825m.ko modules-rpi-${KERNEL_VERSION}-ultruo/lib/modules/${KERNEL_VERSION}-v7l+/kernel/sound/soc/codecs/
-cp linux-${KERNEL_VERSION}-v8+/sound/soc/codecs/snd-soc-tas5825m.ko modules-rpi-${KERNEL_VERSION}-ultruo/lib/modules/${KERNEL_VERSION}-v8+/kernel/sound/soc/codecs/
-cp linux-${KERNEL_VERSION}-v8-16k+/sound/soc/codecs/snd-soc-tas5825m.ko modules-rpi-${KERNEL_VERSION}-ultruo/lib/modules/${KERNEL_VERSION}-v8-16k+/kernel/sound/soc/codecs/
+cp linux-${KERNEL_VERSION}+/sound/soc/codecs/snd-soc-tas5828m.ko modules-rpi-${KERNEL_VERSION}-ultruo//lib/modules/${KERNEL_VERSION}+/kernel/sound/soc/codecs/
+cp linux-${KERNEL_VERSION}-v7+/sound/soc/codecs/snd-soc-tas5828m.ko modules-rpi-${KERNEL_VERSION}-ultruo/lib/modules/${KERNEL_VERSION}-v7+/kernel/sound/soc/codecs/
+cp linux-${KERNEL_VERSION}-v7l+/sound/soc/codecs/snd-soc-tas5828m.ko modules-rpi-${KERNEL_VERSION}-ultruo/lib/modules/${KERNEL_VERSION}-v7l+/kernel/sound/soc/codecs/
+cp linux-${KERNEL_VERSION}-v8+/sound/soc/codecs/snd-soc-tas5828m.ko modules-rpi-${KERNEL_VERSION}-ultruo/lib/modules/${KERNEL_VERSION}-v8+/kernel/sound/soc/codecs/
+cp linux-${KERNEL_VERSION}-v8-16k+/sound/soc/codecs/snd-soc-tas5828m.ko modules-rpi-${KERNEL_VERSION}-ultruo/lib/modules/${KERNEL_VERSION}-v8-16k+/kernel/sound/soc/codecs/
 tar -czvf modules-rpi-${KERNEL_VERSION}-ultruo.tar.gz modules-rpi-${KERNEL_VERSION}-ultruo/ --owner=0 --group=0
 md5sum modules-rpi-${KERNEL_VERSION}-ultruo.tar.gz > modules-rpi-${KERNEL_VERSION}-ultruo.md5sum.txt
 sha1sum modules-rpi-${KERNEL_VERSION}-ultruo.tar.gz > modules-rpi-${KERNEL_VERSION}-ultruo.sha1sum.txt
